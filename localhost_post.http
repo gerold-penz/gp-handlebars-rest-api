@@ -1,0 +1,10 @@
+# Funktioniert leider nicht in PyCharm, weil die doppelten geschwungenen Klammern als Variablen interpretiert werden.
+POST http://localhost:8080/api/render
+Content-Type: application/json
+
+{
+    "template": "Hallo {{name}}!",
+    "context": {
+        "name": "Gerold"
+    }
+}
