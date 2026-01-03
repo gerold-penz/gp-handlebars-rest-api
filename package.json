@@ -1,6 +1,6 @@
 {
   "name": "gp-handlebars-rest-api",
-  "version": "1.0.4",
+  "version": "1.0.6",
   "author": {
     "name": "Gerold Penz",
     "email": "gerold@gp-softwaretechnik.at",
@@ -29,10 +29,11 @@
   "type": "module",
   "private": false,
   "devDependencies": {
-    "@types/bun": "latest",
-    "bootstrap": "^5.3.8",
+    "@types/bun": "latest"
+  },
+  "dependencies": {
     "handlebars": "^4.7.8",
-    "scss": "^0.2.4"
+    "bootstrap": "^5.3.8"
   },
   "peerDependencies": {
     "typescript": "^5"

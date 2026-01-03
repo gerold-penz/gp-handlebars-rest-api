@@ -8,7 +8,7 @@ WORKDIR /home/bun/app
 ADD / ./
 
 ## Install dependencies (including devDependencies)
-#RUN ["bun", "install"]
+RUN ["bun", "install"]
 
 # Define start command
 CMD ["bun", "--bun", "start"]
