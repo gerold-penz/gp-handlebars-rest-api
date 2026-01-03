@@ -5,13 +5,10 @@ LABEL org.opencontainers.image.description="Handlebars Template REST API with Bu
 WORKDIR /home/bun/app
 
 # Add files to container
-ADD /build ./
-ADD /package.json ./
-ADD /bun.lock ./
-ADD /bunfig.toml ./
+ADD / ./
 
-# Install dependencies (including devDependencies)
-RUN ["bun", "install"]
+## Install dependencies (including devDependencies)
+#RUN ["bun", "install"]
 
 # Define start command
 CMD ["bun", "--bun", "start"]

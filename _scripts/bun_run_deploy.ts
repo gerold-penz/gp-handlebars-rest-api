@@ -13,10 +13,10 @@ try {
         docker buildx build \
         --pull \
         --platform linux/amd64,linux/arm64 \
-        -t ghcr.io/gerold-penz/gp-imap-rest-api:${major}.${minor}.${patch} \
-        -t ghcr.io/gerold-penz/gp-imap-rest-api:${major}.${minor} \
-        -t ghcr.io/gerold-penz/gp-imap-rest-api:${major} \
-        -t ghcr.io/gerold-penz/gp-imap-rest-api:latest \
+        -t ghcr.io/gerold-penz/gp-handlebars-rest-api:${major}.${minor}.${patch} \
+        -t ghcr.io/gerold-penz/gp-handlebars-rest-api:${major}.${minor} \
+        -t ghcr.io/gerold-penz/gp-handlebars-rest-api:${major} \
+        -t ghcr.io/gerold-penz/gp-handlebars-rest-api:latest \
         --push \
         .
     `).exitCode
