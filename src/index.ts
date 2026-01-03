@@ -1,5 +1,7 @@
 import Handlebars from "handlebars"
 import type { RuntimeOptions } from "handlebars"
+import indexHtml from "../html/index.html"
+import { join, resolve } from "node:path"
 
 
 interface CompileBody {
@@ -14,14 +16,20 @@ interface CompileBody {
 const server = Bun.serve({
 
     routes: {
-        "/favicon.ico": Bun.file("./static/favicon.ico"),
+        "/": indexHtml,
+
+        "/static/:filename": (request) => {
+            const filePath = resolve(join(import.meta.dir, "..", "static", request.params.filename))
+            return new Response(Bun.file(filePath))
+        },
 
         "/api/render": {
             POST: async (req) => {
+                console.debug("/api/render")
                 const data = await req.json() as CompileBody
                 const template = Handlebars.compile(data.template)
-                const compiled = template(data?.context ?? undefined, data?.options ?? undefined)
-                return Response.json({compiled})
+                const rendered = template(data?.context ?? undefined, data?.options ?? undefined)
+                return Response.json({rendered})
             },
         },
     },

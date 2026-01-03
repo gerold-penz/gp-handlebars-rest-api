@@ -1,6 +1,6 @@
 {
   "name": "gp-handlebars-rest-api",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": {
     "name": "Gerold Penz",
     "email": "gerold@gp-softwaretechnik.at",
@@ -25,19 +25,21 @@
     "Docker"
   ],
   "license": "MIT",
-  "module": "src/index.ts",
+  "module": "index.ts",
   "type": "module",
   "private": false,
   "devDependencies": {
     "@types/bun": "latest",
-    "handlebars": "^4.7.8"
+    "bootstrap": "^5.3.8",
+    "handlebars": "^4.7.8",
+    "scss": "^0.2.4"
   },
   "peerDependencies": {
     "typescript": "^5"
   },
   "scripts": {
     "start": "bun --bun run ./src/index.ts",
-    "dev": "bun --bun run --hot --host=0.0.0.0 --port=8080 --strictPort ./src/index.ts",
+    "dev": "bun --bun run --watch --host=0.0.0.0 --port=8080 --strictPort ./src/index.ts",
     "incr_version": "npm version patch --no-git-tag-version",
     "_build": "bun --bun run xxx",
     "_preview": "bun --bun xxx --host=0.0.0.0 --port=8080 --strictPort"

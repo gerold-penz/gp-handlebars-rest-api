@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Gp-Handlebars-Rest-Api</title>
+  <link rel="icon" href="/static/favicon.png" type="image/png"/>
+  <link rel="stylesheet" href="bootstrap/dist/css/bootstrap.css"/>
+  <script src="./index.ts" type="module"></script>
+
+</head>
+<body>
+  <div class="container mt-4">
+    <h1>Gp-Handlebars-Rest-Api</h1>
+
+    <pre class="mt-4">
+POST <span id="origin"></span>/api/render
+Content-Type: application/json
+
+{
+    "template": "Hallo {{name}}! Servus aus {{city}}.",
+    "context": {
+        "name": "Gerold",
+        "city": "Oberhofen im Inntal"
+    }
+}
+
+&gt;&gt;&gt; {
+&gt;&gt;&gt;   "rendered": "Hallo Gerold! Servus aus Oberhofen im Inntal."
+&gt;&gt;&gt; }
+    </pre>
+
+  </div>
+</body>
+</html>
