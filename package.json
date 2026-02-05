@@ -41,6 +41,6 @@
   "scripts": {
     "start": "bun --bun run  --host=0.0.0.0 --port=3000 --strictPort ./src/index.ts",
     "dev": "bun --bun run --watch --host=0.0.0.0 --port=8080 --strictPort ./src/index.ts",
-    "incr_version": "npm version patch --no-git-tag-version"
+		"incr_version": "bun pm version patch --no-git-tag-version"
   }
 }
